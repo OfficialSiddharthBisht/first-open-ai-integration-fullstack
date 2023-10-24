@@ -10,6 +10,7 @@ import {
   theme,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import Router from './Routes';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Box textAlign="center" fontSize="xl">
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
-          Hello
+          <Router />
         </Grid>
       </Box>
     </ChakraProvider>
