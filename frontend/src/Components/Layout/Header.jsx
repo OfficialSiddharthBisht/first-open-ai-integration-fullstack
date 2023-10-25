@@ -1,8 +1,10 @@
 import React from 'react'
+import { ColorModeSwitcher } from '../../ColorModeSwitcher';
+
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <ColorModeSwitcher justifySelf="flex-end" />
   )
 }
 
