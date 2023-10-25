@@ -10,9 +10,11 @@ app.use(cookieParser());
 
 // Routes Import
 const user = require('./routes/userRoute');
+const openAi = require('./routes/openAIRoute');
 
 // Routes Use
 app.use("/api/v1",user);
+app.use("/api/v1",openAi)
 
 // middleware for errors
 app.use(errorMiddleware)

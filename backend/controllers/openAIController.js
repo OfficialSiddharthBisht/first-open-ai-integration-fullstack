@@ -3,7 +3,8 @@ const OpenAI = require("openai");
 const dotenv = require("dotenv");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const User = require("../modals/userModel");
-dotenv.config({ path: "../config/config.env" });
+dotenv.config({ path: "./config/config.env" });
+
 
 console.log(process.env.OPENAI_API_KEY);
 
