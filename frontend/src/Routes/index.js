@@ -35,7 +35,7 @@ export default function Router() {
             element:( 
               <RequireAuth>
                 <Home />
-              </RequireAuth>
+                </RequireAuth>
             ),
           },
         ],

@@ -6,7 +6,7 @@ const crypto = require('crypto');
 
 // Signup User
 exports.registerUser = catchAsyncErrors(async (req,res,next)=>{
-    const {name, email, password} = req.body.payload;
+    const {name, email, password} = req.body;
     const user = await User.create({
         name,
         email,
@@ -17,7 +17,7 @@ exports.registerUser = catchAsyncErrors(async (req,res,next)=>{
 
 // Login User 
 exports.loginUser = catchAsyncErrors(async(req,res,next)=>{
-    const {email, password} = req.body.payload;
+    const {email, password} = req.body;
     // checking if we have both email and password
     if(!email || !password){
         return next(new ErrorHandler("Please enter email and password",500));
