@@ -13,8 +13,8 @@ const openai = new OpenAI({
 });
 
 exports.openAi = catchAsyncErrors(async (req, res, bext) => {
-  const user = await User.findById(req.user.id);
-  if (user) {
+  // const user = await User.findById(req.user.id);
+  // if (user) {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
@@ -34,5 +34,5 @@ exports.openAi = catchAsyncErrors(async (req, res, bext) => {
       message:response.choices[0].message.content,
     })
     console.log(response.choices[0].message.content);
-  }
+  // }
 });
