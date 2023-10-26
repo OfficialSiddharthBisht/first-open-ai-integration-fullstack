@@ -21,6 +21,8 @@ const LoginPage = () => {
       console.log('Login Successful:', response.data);
       localStorage.setItem("accessToken", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
+      alert("Login Successful")
+      window.open("/", "_self");
       // You can add redirection or other logic here after a successful login.
     } catch (error) {
       console.error('Login Error:', error);

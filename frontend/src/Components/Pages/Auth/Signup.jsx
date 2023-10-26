@@ -15,6 +15,8 @@ const SignupPage = () => {
     try {
       const response = await axios.post('http://localhost:3005/api/v1/register', values);
       console.log('Signup Successful:', response.data);
+      alert("Sign Up Successful");
+      window.open("/login", "_self");
       // You can add redirection or other logic here after a successful signup.
     } catch (error) {
       console.error('Signup Error:', error);
@@ -23,7 +25,7 @@ const SignupPage = () => {
   };
   useEffect(() => {
     if (localStorage.getItem("accessToken", null) !== null && localStorage.getItem("accessToken", null) !== undefined) {
-      window.open("/", "_self");
+      window.open("/login", "_self");
     }
   }, []);
   return (
