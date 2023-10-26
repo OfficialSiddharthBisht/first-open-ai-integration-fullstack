@@ -10,6 +10,18 @@ import Signup from "../Components/Pages/Auth/Signup";
 import Page_404 from '../Components/Pages/LostPages/Page_404';
 import Page_500 from '../Components/Pages/LostPages/Page_500';
 
+
+function RequireAuth({ children }) {
+  const accessToken = localStorage.getItem("accessToken", null);
+  const location = useLocation();
+
+  if (accessToken == null || accessToken === undefined) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return children;
+}
+
 // Routing function
 
 export default function Router() {
@@ -20,7 +32,11 @@ export default function Router() {
         children: [
           {
             path: "",
-            element: <Home />,
+            element:( 
+              <RequireAuth>
+                <Home />
+              </RequireAuth>
+            ),
           },
         ],
       },
