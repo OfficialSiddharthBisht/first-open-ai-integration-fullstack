@@ -20,7 +20,7 @@ exports.openAi = catchAsyncErrors(async (req, res, bext) => {
       messages: [
         {
           role: "user",
-          content: "generate a good motivational quote",
+          content: "generate a motivational quote",
         },
       ],
       temperature: 1,
